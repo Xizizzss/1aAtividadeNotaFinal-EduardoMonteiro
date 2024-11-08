@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 4 - Nota Final</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Doto:wght@100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Pacifico&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Doto:wght@100..900&family=Funnel+Display:wght@300..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="area">
+        <div class="container">
+            <h1>Calculador de IMC</h1>
+            <div class="input_area">
+                <h2>Altura (cm)</h2>
+                <input id="height" type="number">
+            </div>
+            <div class="input_area">
+                <h2>Peso (kg)</h2>
+                <input id="weight" type="number">
+            </div>
+            <button onclick="calculate()">Calcular</button>
+            <textarea name="" id="text_area" rows="8"></textarea>
+        </div>
+    </div>
+
+    <style>
+        body {
+            background-color: black;
+        }
+
+        h1 {
+            margin-block-start: 1px;
+        }
+
+        h2 {
+            font-family: "Funnel Display", sans-serif;
+        }
+
+        .input-area {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .container {
+            font-family: "Pacifico", cursive;
+            background: rgb(143, 0, 255);
+            background: linear-gradient(261deg, rgba(143, 0, 255, 1) 0%, rgba(3, 232, 208, 1) 50%, rgba(9, 38, 121, 1) 100%);
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 400px;
+            border-radius: 20px;
+            padding: 20px;
+            width: 400px;
+        }
+
+        h1, h2 {
+            color: rgba(143, 0, 255, 1);
+        }
+
+        button {
+            font-family: "Funnel Display", sans-serif;
+            height: 3em;
+            width: 114px;
+            color: rgba(143, 0, 255, 1);
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+
+        textarea {
+            width: 50%;
+            margin-top: 10px;
+            border-radius: 10px;
+            text-align:center;
+            height: 20px;
+        }
+    </style>
+
+    <script>
+        function calculate() {
+            var height = document.getElementById("height").value / 100;
+            var weight = document.getElementById("weight").value;
+
+            var imc = weight / height ** 2;
+            var text = "";
+            document.getElementById("text_area").innerText = imc;
+        }
+    </script>
+</body>
+</html>
