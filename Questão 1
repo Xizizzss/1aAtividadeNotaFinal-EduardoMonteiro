@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 1 - Nota Final</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+
+    <style type="text/css" title="Estilocabecalho" media="all">
+        body {
+            font-family: 'Roboto Mono', sans-serif;
+            font-size: 22px;
+            text-align: center;
+            background-color: #708090;
+            color: whitesmoke;
+        }
+
+        h1 {
+            font-family: "DM Serif Text", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        h2 {
+            background-color: #708090;
+            padding: 14px;
+        }
+
+        p {
+            background-color: #708090;
+            font-size: small;
+            text-align: justify;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .informacoes {
+            font-size: small;
+            background-color: #708090;
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        .foto {
+            width: 200px;
+            border-radius: 10%;
+        }
+
+        .sociais {
+            width: 33px;
+            padding-left: 5px;
+            display: inline-block;
+        }
+
+        .linkedin {
+            width: 33px;
+        }
+
+        .github {
+            width: 33px;
+        }
+
+        .negrito {
+            font-size: small;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="cabecalho">
+            <h1>Perfil de Eduardo</h1>
+            <img src="Minha_Foto.jpeg" class="foto" alt="Foto de Eduardo">
+        </div>
+
+        <div class="sobre_mim">
+            <h3>Quem sou eu:</h3>
+            <p>
+                Me chamo Eduardo, sou estudante de Ciência da Computação e também trabalho com produção de vídeos. Sempre procuro aprender coisas em torno de novas tecnologias, no presente momento, estou me aprofundando nas linguagens Python, C, HTML, CSS, Javascript e PHP. Adoro o universo da tecnologia sempre o relacionando com a criatividade, estou sempre tentando unir o útil ao agradável.
+            </p>
+        </div>
+
+        <div class="informacoes">
+            <h4>Informações adicionais:</h4>
+            <span class="negrito">Nome:</span> Eduardo da Costa Monteiro | 
+            <span class="negrito">Cidade:</span> Niterói-RJ |
+            <span class="negrito">Idade:</span> 19 anos |
+            <span class="negrito">Matrícula:</span> 202402874659
+        </div>
+
+        <div class="redes-sociais">
+            <a href="https://www.instagram.com/dudutsz/"><img src="Instagram.png" class="sociais" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/eduardo-monteiro-3991422b7/?trk=public-profile-join-page"><img src="Linkedin1.png" class="linkedin" alt="LinkedIn"></a>
+            <a href="https://github.com/Xizizzss"><img src="github-mark.png" class="github" alt="GitHub"></a>
+        </div>
+    </main>
+</body>
+</html>
