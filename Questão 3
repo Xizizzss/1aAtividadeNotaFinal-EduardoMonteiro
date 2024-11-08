@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Doto:wght@100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+
+
+
+    <title>Questão 3 - Nota final</title>
+</head>
+<body>
+    <div class="container">
+        <section class="header">
+            <h1>Formulário de contato</h1>
+        </section>
+
+        <form id="form" class="form">
+            <div class="form-content">
+                <label for="username">Nome do usuário</label>
+                <input 
+                type="text" 
+                id="username" 
+                placeholder="Digite o nome de Usuário"
+                />
+                <a>Aqui vai a amensagem de erro....</a>
+            </div> 
+
+            <div class="form-content">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Digite o seu Email"/>
+                <a>Aqui vai a mensagem de erro....</a>
+            </div> 
+ 
+            
+            <div class="form-content">
+                <label for="Mensagem">Mensagem:</label><br>
+                <textarea id="message" name="message" placeholder="Escreva sobre você" rows="4" required></textarea>
+                <a>Aqui vai a mensagem de erro....</a>   
+            </div>
+
+            <button type="submit">Enviar</button>
+            
+            
+
+        </form>
+
+    </div>
+    <script>
+        const form = document.getElementById("form");
+        const username = document.getElementById("username");
+        const Email = document.getElementById("email");
+        const Mensagem = document.getElementById("message");
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            if(checkForm()){
+                alert('Formulário enviado com sucesso!');;
+            }
+        })
+
+        Email.addEventListener("blur", () => {
+            checkInputEmail();
+        })
+
+        username.addEventListener("blur", () => {
+            checkInputUsername();
+        })
+
+
+        Mensagem.addEventListener("blur", () => {
+            checkInputMessage();
+        })
+        
+
+        function checkInputUsername(){
+            const usernameValue = username.value;
+
+            if(usernameValue === ""){
+                errorInput(username, "Escreva seu nome de Usuário")
+            }else{
+                const forItem = username.parentElement;
+                forItem.className = "form-content"
+            }
+        
+        }
+
+        function checkInputEmail(){
+            const emailValue = Email.value;
+
+            if(emailValue === ""){
+                errorInput(Email, "Escreva seu email")
+            }else{
+                const forItem = Email.parentElement;
+                forItem.className = "form-content"
+            }
+        }
+
+        function checkInputMessage(){
+            const messageValue = Mensagem.value;
+
+            if(messageValue === ""){
+                errorInput(Mensagem, "Escreva sua Mensagem")
+            }else{
+                const forItem = Mensagem.parentElement;
+                forItem.className = "form-content"
+            }
+        }
+
+        
+
+        function checkForm(){
+            checkInputUsername();
+            checkInputEmail();
+            checkInputMessage();
+
+            const formItems = form.querySelectorAll(".form-content")
+
+            const isValid = [...formItems].every( (item) => {
+                return item.className === "form-content"
+            });
+
+            console.log(isValid)
+            return isValid;
+        }
+
+
+        function errorInput(input, message){
+            const formItem = input.parentElement;
+            const textMessage = formItem.querySelector("a")
+
+            textMessage.innerText = message;
+
+            formItem.className = "form-content error"
+        }
+
+        
+
+
+
+    </script>
+</body>
+</html>
+
+<style>
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Libre Baskerville", serif;
+}
+
+body{
+    background: rgb(0, 0, 0);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    background: rgb(255, 255, 255);
+    border-radius: 14px;
+    margin: 14px;
+    max-width: 600px;
+    width: 100%;
+    box-sizing: 0 3px 5px rgba(101,2,249,1);
+    overflow: hidden;
+}
+
+.header{
+    background: rgb(101,2,249);
+    background: linear-gradient(261deg, rgba(101,2,249,1) 16%, rgba(9,38,121,1) 60%, rgba(143,0,255,1) 84%);
+    text-align: center;
+    padding: 14px;
+}
+
+.form{
+    padding: 18px;
+}
+
+.form-content{
+    margin-bottom: 8px;
+    padding-bottom: 18px;
+    position: relative;
+}
+
+.form-content label{
+    display: inline-block;
+    margin-bottom: 4px;
+    margin-top: 8px;
+}
+
+.form-content input{
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px;
+    border: 2px solid #dfdfdf;
+}
+
+.form-content a{
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    visibility: hidden;
+}
+
+.form button{
+    background: rgb(101,2,249);
+    color: #FFF;
+    margin-top: 8px;
+    width: 100%;
+    border-radius: 14px;
+    padding: 10px;
+    border: 0;
+    cursor: pointer;
+    margin-top:14px;
+}
+
+.form-content textarea {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px;
+    border: 2px solid #dfdfdf;
+}
+.form-content.error input{
+    border-color: red;
+}
+
+.form-content.error a{
+    color: red;
+    visibility: visible;
+}
+
+.form-content.error textarea{
+    border-color: red;
+}
+
+</style>
